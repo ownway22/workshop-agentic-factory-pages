@@ -8,7 +8,7 @@
 | 更新日期 | 2026-11-16；這是教材更新日，不是活動日期 |
 | 網站文件與互動 | 已執行 strict build、導覽、搜尋、圖片放大與鍵盤／窄螢幕驗收；不代表雲端 lab 成功 |
 | GitHub Pages | [Agentic Factory Workshop](https://ownway22.github.io/workshop-agentic-factory-pages/) |
-| Azure／五個 Agents | 由講師另行實測；本網站開發未佈建、執行或驗收雲端 workflow |
+| Azure／五個 Agent | 由講師另行實測；本網站開發未佈建、執行或驗收雲端 workflow |
 | 活動時間與每步耗時 | 待講師安排與試跑確認，不自行宣稱完成分鐘數 |
 
 ## 授權 {#license}

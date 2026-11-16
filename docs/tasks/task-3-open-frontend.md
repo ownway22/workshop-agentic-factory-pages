@@ -4,6 +4,9 @@
 
 在遠端桌面內開啟 Factory Agent Workflow UI，辨識提交異常與觀察 Agents 的操作區域；本 Task 只檢查設定，不送出資料。
 
+!!! tip "維護現場觀點"
+    把五個 Agent 面板當作維護協作的進度看板：後續不只看是否完成，也要看每個角色留下什麼資訊，以及下一個角色能否接手。
+
 ## 步驟 {#steps}
 
 ### 1. 找到 frontend 連結
@@ -12,14 +15,14 @@
 
 ![原 repo 的 frontend 連結位置，示範如何從 Aspire 輸出開啟操作 UI](../assets/images/challenge-4-frontend-link.png){ .workshop-figure width="1358" height="337" loading="lazy" }
 
-*圖片 1：原始教材示意畫面：hostname 與 port；實際 endpoint 以 dashboard 顯示為準。*
+*圖片 1：原始教材示意畫面；實際網址以 dashboard 顯示為準。*
 
 ### 2. 兩個操作區域的用途
 
 | 區域 | 要觀察的內容 |
 |---|---|
 | **Define an anomaly** | Machine ID、遙測資料（Telemetry，JSON）、Trigger anomaly 按鈕 |
-| **Agent Workflow** | 五個 Agents 的角色、目前狀態，以及執行後的輸出 |
+| **Agent Workflow** | 五個 Agent 的角色、目前狀態，以及執行後的輸出 |
 
 你應看到這五個角色依序排列：
 
@@ -29,7 +32,7 @@
 4. Maintenance Scheduler Agent
 5. Parts Ordering Agent
 
-![原始 repository 的 Factory Agent Workflow 示意畫面，左側提交 telemetry，右側呈現五個 Agents](../assets/images/challenge-4-agent-workflow-ui-start.png){ .workshop-figure width="2067" height="1781" loading="lazy" }
+![原始 repository 的 Factory Agent Workflow 示意畫面，左側提交 telemetry，右側呈現五個 Agent](../assets/images/challenge-4-agent-workflow-ui-start.png){ .workshop-figure width="2067" height="1781" loading="lazy" }
 
 *圖片 2：原始教材示意畫面；實際介面與執行狀態可能不同。*
 
@@ -38,11 +41,11 @@
 在表單下方核對 `Using VITE_API_URL` 是否對應 Task 2 的 workflow endpoint，
 起始狀態通常為 Idle／Waiting for an alarm，在下一個 Task 才提交一次合成異常。
 
-## Checklist {#checklist}
+## 完成條件 {#checklist}
 
 - [ ] 順利開啟 frontend。
 - [ ] 理解 Machine ID、Telemetry、Trigger anomaly 與五個 Agent 角色。
-- [ ] API 設定，`VITE_API_URL` 指向預期的 workflow API。
+- [ ] 已確認 `VITE_API_URL` 指向預期的 workflow API。
 
 ## 下一步 {#next}
 

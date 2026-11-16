@@ -4,6 +4,9 @@
 
 在遠端桌面中，啟動既有 multi-agent application，並找到 frontend、workflow API 與 Python Agents 的執行資源。
 
+!!! tip "維護現場觀點"
+    這次啟動的不是單一聊天工具，而是一條讓異常判讀、維修規劃、排程與備料接力的流程。先確認各服務就緒，才能在後續觀察交接是否完整。
+
 ## 步驟 {#steps}
 
 ### 1. 啟動 Aspire 應用程式
@@ -40,7 +43,7 @@ Aspire 會提供 dashboard 連結，並啟動這三個命名資源：
 
 *原始教材示意畫面；實際資源狀態、網址與連接埠以自己的 VM 為準。*
 
-## Checklist {#checklist}
+## 完成條件 {#checklist}
 
 - [ ] 啟動成功，`aspire run` 正在執行，沒有未處理的啟動錯誤。
 - [ ] 服務正常，Resources 找到 `app`、`dotnetworkflow` 與 `frontend`。

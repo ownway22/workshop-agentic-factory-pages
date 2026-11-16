@@ -4,6 +4,9 @@
 
 確認遠端桌面內的 workflow API 可以連線，並理解 frontend 要呼叫哪個 endpoint。
 
+!!! tip "維護現場觀點"
+    現場需要的不只是「API 有回應」，而是異常能轉成可供下一個角色接手的維護資訊。此步先排除連線與設定問題，後續再核對工單等實際成果。
+
 ## 步驟 {#steps}
 
 ### 1. 找到 dotnetworkflow 的 HTTP endpoint
@@ -21,7 +24,7 @@ curl --fail --silent --show-error http://localhost:5231/health
 ```
 
 若 HTTP endpoint 使用其他 port，先將命令中的網址換成 Resources 顯示的值。
-預期收到 HTTP 200 的 JSON，`status` 欄位值為 `"Configured"`，並包含執行當下的時間。這表示必要設定已通過格式與完整性檢查，不代表 Foundry、Cosmos DB 或五個 Agents 已實際連線並成功執行。
+預期收到 HTTP 200 的 JSON，`status` 欄位值為 `"Configured"`，並包含執行當下的時間。這表示必要設定已通過格式與完整性檢查，不代表 Foundry、Cosmos DB 或五個 Agent 已實際連線並成功執行。
 
 ### 3. 理解 frontend 的 API URL
 
@@ -32,7 +35,7 @@ curl --fail --silent --show-error http://localhost:5231/health
 實際 workflow 使用 `/api/analyze_machine/stream` 傳送資料，透過 Server-Sent Events（SSE）更新操作進度。
 真正呼叫與觀察會在 Task 4 進行。
 
-## Checklist {#checklist}
+## 完成條件 {#checklist}
 
 - [ ] 找到 `dotnetworkflow` 的 HTTP endpoint，並從 VM 內的 Terminal 發出 `/health` 請求。
 - [ ] 收到 HTTP 200，且 JSON 的 `status` 為 `"Configured"`；了解這只代表設定檢查通過。

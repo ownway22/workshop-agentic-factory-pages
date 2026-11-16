@@ -2,8 +2,9 @@
 
 ## 情境
 
-本教材以晶圓製造工廠作為設備維護的說明情境。非預期停機可能影響產線；維護團隊必須釐清異常、安排具備合適技能的人員與時段、確認備品，並把診斷結果清楚交接。
-這是一場以 **Microsoft Foundry、Microsoft Agent Framework 與 Aspire** 為主線的 hands-on workshop，觀察五個 Agents 如何把異常資訊整理成診斷、維修規劃、維護排程與備品準備。
+本教材以晶圓製造工廠作為設備維護的說明情境。設備出現異常後，挑戰不只是判斷哪裡出了問題：設備工程師需要查找維修知識，製造單位需要協調維護時段，物料人員則要確認備品是否到位。資訊若分散在不同系統與人員之間，維護準備就可能卡在反覆確認與交接，讓非預期停機的處理更難協調。
+
+本次 hands-on workshop 使用 **Microsoft Foundry、Microsoft Agent Framework 與 Aspire**，觀察五個 Agent 如何把一筆設備警訊整理成診斷、工單、維護排程與備品準備資訊。重點不只是讓流程跑完，而是讓下一個角色拿到**可判讀、可交接的資訊**。
 
 實際操作沿用原始 repository 的輪胎製造範例資料，例如硫化溫度 `curing_temperature` 與週期時間 `cycle_time`。這些是合成遙測資料（synthetic telemetry），不是晶圓設備的真實讀值，也不代表實廠狀況。
 
@@ -13,28 +14,30 @@
 
 <br/>
 
-### 五個 Agents 如何協作
+### 五個 Agent 如何協作 {#agents}
 
-| 順序 | Agent | 在維護情境中的角色 | 目前 Challenge 4 的呼叫方式 |
+把五個 Agent 看成設備、製造與物料單位協作的縮影，而不是五個聊天視窗。每一步都要留下下一個角色可接手的資訊：
+
+| 順序 | Agent | 交棒資訊與業務用途 | 目前 Challenge 4 的呼叫方式 |
 |---|---|---|---|
-| 1 | Anomaly Classification Agent | 判斷異常與嚴重程度（severity） | Foundry Agent Service，使用 remote MCP tools |
-| 2 | Fault Diagnosis Agent | 結合異常與知識，提出可能原因 | Foundry Agent Service，使用 MCP／knowledge |
-| 3 | Repair Planner Agent | 整理維修需求、技能、備品與工單 | VM 內 .NET workflow 的流程內呼叫，使用 Cosmos DB tools |
-| 4 | Maintenance Scheduler Agent | 根據工單與可用條件安排維護 | VM 內 Python service，透過 HTTP A2A 呼叫 |
-| 5 | Parts Ordering Agent | 根據工單檢查與準備備品 | VM 內 Python service，透過 HTTP A2A 呼叫 |
+| 1 | Anomaly Classification Agent | 整理異常與嚴重程度（severity），讓後續診斷聚焦需要關注的讀值。 | Foundry Agent Service，使用 remote MCP tools |
+| 2 | Fault Diagnosis Agent | 提供可能原因、知識依據與檢查方向，供維修規劃判讀。 | Foundry Agent Service，使用 MCP／knowledge |
+| 3 | Repair Planner Agent | 把診斷轉成工單、技能與備品需求，讓排程與備料有共同的工作對象。 | VM 內 .NET workflow 的流程內呼叫，使用 Cosmos DB tools |
+| 4 | Maintenance Scheduler Agent | 提出維護時間與相關安排，協助考量維護急迫性與生產時段。 | VM 內 Python service，透過 HTTP A2A 呼叫 |
+| 5 | Parts Ordering Agent | 依工單檢查備品與補購需求，提早辨識可能造成等待的缺料條件。 | VM 內 Python service，透過 HTTP A2A 呼叫 |
 
 ## 目標
 
 本次練習不連接實廠感測器（sensors），而是手動提交一筆**合成遙測資料（telemetry）**。我們將注意力放在資料如何在 Agents 之間傳遞，以及如何從工具呼叫（tool calls）、工單與追蹤記錄（traces）找到可核對的證據。完成五個 Tasks 後，你應能：
 
 - 使用 Aspire 啟動 .NET、Python 與 frontend 組成的應用程式。
-- 解釋五個 Agents 的分工，以及 sequential orchestration 的依賴順序。
+- 解釋五個 Agent 的分工，以及 sequential orchestration 的依賴順序。
 - 分辨 Foundry 託管 Agents、VM 內的 .NET agent，以及 Python HTTP A2A 的呼叫邊界。
 - 從 UI、Console 與 Traces 追蹤一次操作，而不只相信模型回答「已完成」。
 
 ## 步驟
 
-每頁都提供操作、完成條件與疑難排解。若前置條件尚未滿足，請先向講師確認，不要跳過失敗步驟。完成條件是供自行核對的清單，網站不儲存學員進度。需要協助時，可先由全站 [疑難排解](troubleshooting.md)，若仍無法解決，請舉手讓講師知道。
+每頁都提供操作、完成條件與疑難排解。若前置條件尚未滿足，請先向講師確認，不要跳過失敗步驟。完成條件是供自行核對的清單，網站不儲存學員進度。需要協助時，可先查閱全站 [疑難排解](troubleshooting.md)，若仍無法解決，請舉手讓講師知道。
 
 | 頁面 | 你要做的事 | 要看到的結果 |
 |---|---|---|

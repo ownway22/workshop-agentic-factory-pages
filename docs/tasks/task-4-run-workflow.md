@@ -2,8 +2,11 @@
 
 ## 目標 {#goal}
 
-提交一筆合成異常，觀察五個 Agents 的 sequential workflow，
+提交一筆合成異常，觀察五個 Agent 的 sequential workflow，
 並核對各步驟輸出、工單識別碼與工具結果（tool results）。
+
+!!! tip "維護現場觀點"
+    維護準備常需要反覆確認原因、所需技能、可用時段與備品。這次用同一筆異常，觀察 Agents 如何把分散資訊整理成可交接的工單與後續安排。
 
 ## 步驟 {#steps}
 
@@ -29,6 +32,8 @@
 
 確保 JSON 有效、機台與資料庫一致。
 
+以教材資料為例，硫化溫度的預警門檻為 `178°C`，範例讀值 `179.2°C` 高於它。這是需要關注的觀察，還不是「某個零件已故障」的結論；後續仍需用機台資料與維修知識支持診斷。請以本次工具實際取得的機台與門檻資料核對。
+
 ### 2. 提交一次異常資料
 
 !!! warning "請避免連續提交"
@@ -40,7 +45,9 @@
 
 記錄這次操作的時間與範例 Machine ID，方便下一個 Task 找到同一次 request。
 
-### 3. 觀察 5 個 Agent 的工作順序
+### 3. 觀察五個 Agent 的工作順序 {#3-5-agent}
+
+沿著這次提交的 Machine ID（預設為 `machine-001`），依序追蹤**異常 → 診斷 → 新建工單 → 排程 → 備品確認**。工單是排程與備料共同的工作對象；取得新工單 ID 後，後續結果都應對得上同一張工單，而不是教材截圖中的舊工單。
 
 | 順序 | 要問的問題 |
 |---|---|
@@ -48,7 +55,7 @@
 | Fault Diagnosis | 哪些證據支持可能原因？診斷結果與上一個步驟是否一致？ |
 | Repair Planner | 是否使用 tools 取得資料、建立工單？有沒有明確的工單識別碼？ |
 | Maintenance Scheduler | 是否找到同一張工單？有沒有可核對的排程結果或失敗原因？ |
-| Parts Ordering | 是否處理同一張工單的備品需求？tool result 是成功、缺料或失敗？ |
+| Parts Ordering | 是否處理同一張工單的備品需求？結果是不需訂購、已建立訂單紀錄，還是資料不足或失敗？ |
 
 ![原始 repository 的 workflow 執行中示意畫面，呈現各步驟的進度](../assets/images/challenge-4-agent-workflow-ui-inprogress.png){ .workshop-figure width="2116" height="1773" loading="lazy" }
 
@@ -59,13 +66,17 @@
 展開各步驟的詳細資訊，辨識 tool name、arguments、result 與 Agent output。
 Agent 文字摘要和 tool 回應是不同的證據；例如「已建立工單」要能對應到成功的工具回應與工單 ID。
 
+!!! info "沒有訂單，也可能是合理的備料結果"
+    備品足夠時，結果可能是不需訂購；需要補購時，才會嘗試建立訂單紀錄。兩種結果都要核對同一張工單的備品需求與實際資料，不能只看有沒有訂單。
+    本練習的訂單是資料庫中的紀錄，不代表已向外部供應商正式下單；若資料不足或工具失敗，應標示尚未完成確認。
+
 ![原 repo 的 tool call 詳細資訊，示範展開 arguments 與 result](../assets/images/challenge-4-agent-workflow-ui-toolcall.png){ .workshop-figure width="1775" height="1385" loading="lazy" }
 
-*圖片 2：原始教材示意畫面：第一個 Agent 的工具呼叫與輸出。*
+*圖片 2：原始教材示意畫面，呈現第一個 Agent 的工具呼叫與輸出。*
 
 ![原 repo 的 workflow 結束畫面，示範查看最後結果與各步驟輸出](../assets/images/challenge-4-agent-workflow-ui-end.png){ .workshop-figure width="1735" height="1918" loading="lazy" }
 
-*圖片 3：原始教材示意畫面：五個 Agent 的工具呼叫與輸出。*
+*圖片 3：原始教材示意畫面，呈現五個 Agent 的工具呼叫與輸出。*
 
 ## 完成條件 {#completion}
 
@@ -86,10 +97,10 @@ Agent 文字摘要和 tool 回應是不同的證據；例如「已建立工單�
     再由講師確認 role scope 與生效狀態；不要公開 token 或直接更改共用資源權限。
 
 ??? question "Workflow 無法啟動，或 Agent 數量不足五個"
-    目前 workflow 必須取得全部五個 Agents；Foundry Agent、Repair Planner 或 Python A2A Agent 初始化失敗時，workflow 會回報錯誤，不會以缺少 Agent 的狀態繼續執行。
+    目前 workflow 必須取得全部五個 Agent；Foundry Agent、Repair Planner 或 Python A2A Agent 初始化失敗時，workflow 會回報錯誤，不會以缺少 Agent 的狀態繼續執行。
     查看 `dotnetworkflow` 與 `app` 的 logs，找出第一個初始化／連線錯誤，再請講師確認設定與服務後處理；不要只依 UI 上的五張卡片判定 Agent 都已執行。
 
-??? question "Scheduler／Orderer 找不到工單"
+??? question "Maintenance Scheduler／Parts Ordering 找不到工單"
     核對上一個步驟的 tool result 與工單 ID，並請講師檢查兩個 Cosmos database 設定是否一致。
     工單 ID 大小寫、傳遞內容或資料查詢也可能影響結果；以具體 logs 與資料證據排查，不把問題一律歸因於模型。
 
