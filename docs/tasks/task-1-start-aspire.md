@@ -9,7 +9,7 @@
 
 ## 步驟 {#steps}
 
-### 1. 啟動 Aspire 應用程式
+### 1．啟動 Aspire 應用程式
 
 回到遠端桌面，從 **repository 根目錄**，在 Ubuntu Terminal 執行：
 
@@ -21,7 +21,7 @@ aspire run
 保持這個 Terminal 開啟。若 Aspire 顯示選擇 launch profile，使用講師指定的設定。
 首次啟動可能需要還原 .NET 套件與初始化服務；Python 與 frontend 相依套件須由講師預先準備。此 AppHost 不會自動執行 Python 或 npm 套件安裝。以輸出與資源狀態判斷進度，不假設固定等待時間。
 
-### 2. 確認服務正常
+### 2．確認服務正常
 
 Aspire 會提供 dashboard 連結，並啟動這三個命名資源：
 
@@ -34,7 +34,7 @@ Aspire 會提供 dashboard 連結，並啟動這三個命名資源：
 在 **VM 內**開啟 dashboard；若 VS Code 提示按住 `Ctrl` 或 `Alt` 點選 Terminal 連結，依目前介面提示操作。
 若網址帶有 dashboard 登入 token，僅在自己的 VM 使用，不要分享或截圖公開。
 
-### 3. 確認連線成功
+### 3．確認連線成功
 
 在 dashboard 的 **Resources** 中核對三個資源是否已啟動，並查看是否有 health check 或啟動錯誤。
 先保留 dashboard，接下來會使用其中的 endpoints 與 logs。

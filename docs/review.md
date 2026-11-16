@@ -1,10 +1,14 @@
 # 結論 {#review-and-conclusion}
 
-## 從設備異常到維護準備 {#maintenance-workflow}
+<br/>
 
-晶圓製造設備出現異常時，發現問題只是第一步。非預期停機可能影響產線；團隊還需要釐清可能原因、安排具備合適技能的人員與時段、確認備品，並把維護資訊交接清楚，才能讓後續處理有依據。
+![factory-maintenance-03-human-review-and-readiness](assets/images/factory-maintenance-03-human-review-and-readiness.png){ .factory-maintenance-03-human-review-and-readiness width="2200" height="1100" loading="eager" fetchpriority="high" }
+
+<br/>
 
 ## 五個 Agent 的接力 {#agent-sequence}
+
+晶圓製造設備出現異常時，發現問題只是第一步。非預期停機可能影響產線；團隊還需要釐清可能原因、安排具備合適技能的人員與時段、確認備品，並把維護資訊交接清楚，才能讓後續處理有依據。
 
 本次五個 Agent 依序處理異常分類、故障診斷、維修規劃、維護排程與備品確認。重點不只是跑完五步，而是每次交棒都留下可判讀、可交接、可追溯的資訊。這種分工的三個預期價值是：
 
@@ -16,12 +20,7 @@
 
 Agent 的建議不等於已完成維修或採購：仍須核對診斷、工單、排程與備品資訊，並由負責人依正式流程做出決策。
 
-### 想一想您的現場
-
-1. 在您的現場，維護準備最常卡在找知識、找人、找時段，還是等備品？
-2. 哪些資訊可以先由 Agent 整理，哪些決策仍應由工程師或主管核准？
-
 ## 授權 {#license}
 
 本教材改寫自 [Microsoft 原始教材](https://github.com/microsoft/agentic-factory-hack/blob/main/challenge-4/README_zh-TW.md)。
-原始 repository 與素材採 MIT License，© Microsoft；詳見 [授權全文](assets/source-license.txt)。
+原始 repository 與素材採 MIT License，© Microsoft。

@@ -9,7 +9,7 @@
 
 ## 步驟 {#steps}
 
-### 1. 開啟 Aspire dashboard
+### 1．開啟 Aspire dashboard
 
 回到執行 `aspire run` 的 Terminal，使用輸出中的 Aspire dashboard（儀表板）連結。
 請在 **VM 內的瀏覽器**開啟，或回到 Task 1 已開啟的 dashboard。
@@ -18,7 +18,7 @@
 
 *圖片 1：原始教材示意畫面，標示 Dashboard URL 的位置；實際連結請從自己的 Aspire Terminal 取得。*
 
-### 2. 核對 Resources
+### 2．核對 Resources
 
 確認 `app`、`dotnetworkflow` 與 `frontend` 仍在執行。
 如果某個資源在 Task 4 後停止或變成不健康，先查看該資源的 Console。
@@ -27,7 +27,7 @@
 
 *圖片 2：原始教材示意畫面；自己的資源狀態與 endpoints 可能不同。*
 
-### 3. 查看 Console
+### 3．查看 Console
 
 開啟 **Console／Console logs**，選擇 `dotnetworkflow`，依 Task 4 的操作時間找出本次 request。
 再查看 `app`，觀察 Python A2A 呼叫、初始化或資料存取問題。
@@ -45,7 +45,7 @@
 
 *圖片 3：原始教材示意畫面，示範在 Console 查看 logs；本次訊息依實際執行結果而定。*
 
-### 4. 查看 Traces
+### 4．查看 Traces
 
 開啟 **Traces**，以操作時間、服務與可用的 request 資訊找到同一次呼叫。
 展開 trace 的追蹤區段（spans），觀察 workflow、Agent invocations、HTTP 或 tool 相關紀錄。

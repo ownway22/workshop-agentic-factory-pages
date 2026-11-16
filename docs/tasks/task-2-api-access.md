@@ -9,13 +9,13 @@
 
 ## 步驟 {#steps}
 
-### 1. 找到 dotnetworkflow 的 HTTP endpoint
+### 1．找到 dotnetworkflow 的 HTTP endpoint
 
 在 Aspire dashboard 的 **Resources** 中，找到 `dotnetworkflow`。
 目前原始 launch settings 的 HTTP API 使用 `http://localhost:5231`；
 若講師交付的設定不同，以 Resources 顯示的 HTTP endpoint 為準。
 
-### 2. 檢查 health endpoint
+### 2．檢查 health endpoint
 
 在 **VM 內的 Terminal** 執行：
 
@@ -26,7 +26,7 @@ curl --fail --silent --show-error http://localhost:5231/health
 若 HTTP endpoint 使用其他 port，先將命令中的網址換成 Resources 顯示的值。
 預期收到 HTTP 200 的 JSON，`status` 欄位值為 `"Configured"`，並包含執行當下的時間。這表示必要設定已通過格式與完整性檢查，不代表 Foundry、Cosmos DB 或五個 Agent 已實際連線並成功執行。
 
-### 3. 理解 frontend 的 API URL
+### 3．理解 frontend 的 API URL
 
 目前 AppHost 會將 `dotnetworkflow` 的 HTTP endpoint 提供給 frontend 的 `VITE_API_URL`。
 在非 Codespaces 的環境，它使用 VM 內的服務網址，而不是 `*.app.github.dev`。

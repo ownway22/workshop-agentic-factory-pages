@@ -9,7 +9,7 @@
 
 ## 步驟 {#steps}
 
-### 1. 找到 frontend 連結
+### 1．找到 frontend 連結
 
 在 Aspire 的輸出或 dashboard **Resources** 中，找到 `frontend` 的 HTTP endpoint。
 
@@ -17,7 +17,7 @@
 
 *圖片 1：原始教材示意畫面；實際網址以 dashboard 顯示為準。*
 
-### 2. 兩個操作區域的用途
+### 2．兩個操作區域的用途
 
 | 區域 | 要觀察的內容 |
 |---|---|
@@ -36,7 +36,7 @@
 
 *圖片 2：原始教材示意畫面；實際介面與執行狀態可能不同。*
 
-### 3. 確認 API URL，先不要送出
+### 3．確認 API URL，先不要送出
 
 在表單下方核對 `Using VITE_API_URL` 是否對應 Task 2 的 workflow endpoint，
 起始狀態通常為 Idle／Waiting for an alarm，在下一個 Task 才提交一次合成異常。

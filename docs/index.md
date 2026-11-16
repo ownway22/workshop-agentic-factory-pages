@@ -8,7 +8,7 @@
 
 <br/>
 
-![示意圖：工廠設備異常經由五個 AI 助理轉為診斷、維修、排程與備品準備](assets/images/factory-maintenance-workflow.png){ .factory-maintenance-workflow width="2200" height="1100" loading="eager" fetchpriority="high" }
+![factory-maintenance-workflow](assets/images/factory-maintenance-workflow.png){ .factory-maintenance-workflow width="2200" height="1100" loading="eager" fetchpriority="high" }
 
 <br/>
 

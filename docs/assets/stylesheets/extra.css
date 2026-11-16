@@ -120,6 +120,10 @@ body[data-md-color-scheme="slate"][data-md-color-primary="black"] {
   scroll-margin-top: 4rem;
 }
 
+.md-sidebar--primary .md-nav--primary > .md-nav__title {
+  display: none;
+}
+
 body:has(.factory-title) .md-sidebar--primary .md-nav__item--active > a.md-nav__link {
   display: flex;
 }
