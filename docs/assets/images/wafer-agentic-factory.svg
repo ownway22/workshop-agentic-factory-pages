@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title description">
+  <title id="title">晶圓製造工廠的 Agentic Factory</title>
+  <desc id="description">晶圓設備的合成 telemetry 交給五個依序協作的 Agents：異常分類、故障診斷、維修規劃、維護排程與備品準備。人員仍負責核對與決策。</desc>
+  <defs>
+    <clipPath id="wafer">
+      <circle cx="152" cy="156" r="69"/>
+    </clipPath>
+    <pattern id="dies" width="23" height="23" patternUnits="userSpaceOnUse">
+      <rect width="23" height="23" fill="#c3e6f0"/>
+      <rect x="3" y="3" width="17" height="17" rx="2" fill="#35839e"/>
+    </pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#007a9e"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="1198" height="518" rx="22" fill="#f5f9fc" stroke="#d2e0e8"/>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+    <rect x="30" y="30" width="1140" height="52" rx="12" fill="#14171c"/>
+    <text x="54" y="64" fill="#ffffff" font-size="25" font-weight="700">晶圓製造工廠的 Agentic Factory</text>
+    <circle cx="152" cy="156" r="72" fill="#ffffff" stroke="#007a9e" stroke-width="4"/>
+    <circle cx="152" cy="156" r="69" fill="url(#dies)" clip-path="url(#wafer)"/>
+    <path d="M137 222L152 210L167 222" fill="#f5f9fc" stroke="#007a9e" stroke-width="3"/>
+    <text x="260" y="136" fill="#14171c" font-size="28" font-weight="700">從設備異常，到可核對的維護準備</text>
+    <text x="260" y="176" fill="#465969" font-size="20">合成 Telemetry · 五個 Agents · 工單、工具與 Traces</text>
+    <text x="260" y="214" fill="#465969" font-size="18">Microsoft Foundry + Microsoft Agent Framework + Aspire</text>
+    <g stroke="#007a9e" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M228 334H260"/>
+      <path d="M458 334H490"/>
+      <path d="M688 334H720"/>
+      <path d="M918 334H950"/>
+    </g>
+    <g fill="#ffffff" stroke="#bfd5df" stroke-width="2">
+      <rect x="30" y="270" width="198" height="136" rx="14"/>
+      <rect x="260" y="270" width="198" height="136" rx="14"/>
+      <rect x="490" y="270" width="198" height="136" rx="14"/>
+      <rect x="720" y="270" width="198" height="136" rx="14"/>
+      <rect x="950" y="270" width="220" height="136" rx="14"/>
+    </g>
+    <g fill="#007a9e" font-size="16" font-weight="700">
+      <text x="50" y="298">01</text>
+      <text x="280" y="298">02</text>
+      <text x="510" y="298">03</text>
+      <text x="740" y="298">04</text>
+      <text x="970" y="298">05</text>
+    </g>
+    <g fill="#14171c" font-size="23" font-weight="700">
+      <text x="50" y="336">異常分類</text>
+      <text x="280" y="336">故障診斷</text>
+      <text x="510" y="336">維修規劃</text>
+      <text x="740" y="336">維護排程</text>
+      <text x="970" y="336">備品準備</text>
+    </g>
+    <g fill="#465969" font-size="16">
+      <text x="50" y="366">Anomaly<tspan x="50" dy="22">Classification</tspan></text>
+      <text x="280" y="377">Fault Diagnosis</text>
+      <text x="510" y="377">Repair Planner</text>
+      <text x="740" y="366">Maintenance<tspan x="740" dy="22">Scheduler</tspan></text>
+      <text x="970" y="377">Parts Ordering</text>
+    </g>
+    <rect x="30" y="436" width="1140" height="54" rx="12" fill="#e6f2f6"/>
+    <text x="54" y="470" fill="#006780" font-size="20" font-weight="600">以 Tools、工單與 Traces 核對結果；人員仍負責確認與決策。</text>
+  </g>
+</svg>

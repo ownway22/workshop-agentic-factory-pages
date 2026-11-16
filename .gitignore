@@ -1,0 +1,6 @@
+.venv/
+.pages-publish.git/
+site/
+.cache/
+__pycache__/
+.env*
