@@ -6,8 +6,6 @@
 
 本次 hands-on workshop 使用 **Microsoft Foundry、Microsoft Agent Framework 與 Aspire**，觀察五個 Agent 如何把一筆設備警訊整理成診斷、工單、維護排程與備品準備資訊。重點不只是讓流程跑完，而是讓下一個角色拿到**可判讀、可交接的資訊**。
 
-實際操作沿用原始 repository 的輪胎製造範例資料，例如硫化溫度 `curing_temperature` 與週期時間 `cycle_time`。這些是合成遙測資料（synthetic telemetry），不是晶圓設備的真實讀值，也不代表實廠狀況。
-
 <br/>
 
 ![示意圖：工廠設備異常經由五個 AI 助理轉為診斷、維修、排程與備品準備](assets/images/factory-maintenance-workflow.png){ .factory-maintenance-workflow width="2200" height="1100" loading="eager" fetchpriority="high" }
