@@ -1,5 +1,7 @@
 # 晶圓製造工廠的 Agentic Factory：Workshop 教學網站
 
+**[工作坊檔案下載：依組別點選 STD 檔案](docs/workshop-downloads.md)**
+
 這是獨立於應用程式的 **MkDocs + Material for MkDocs + mkdocs-glightbox** 教材專案。
 學員在自己的電腦瀏覽 GitHub Pages，Task 1–5 則在講師提供的 Ubuntu 遠端桌面操作。
 學員不需要為了閱讀教材安裝 MkDocs。
@@ -29,7 +31,7 @@ workshop-pages-mkdocs/
 ├── .github/workflows/pages.yml
 └── docs/
     ├── index.md
-    ├── workshop-downloads.html
+    ├── workshop-downloads.md
     ├── prerequisites.md
     ├── review.md
     ├── troubleshooting.md
@@ -49,8 +51,8 @@ workshop-pages-mkdocs/
 
 ## 講師／維護者：本機預覽
 
-`docs/workshop-downloads.html` 是保留原始內容的獨立下載頁，由首頁的「工作坊下載」連結開啟，
-MkDocs 建置時會原樣複製至 `site/workshop-downloads.html`，不套用 Material 版型或加入教材章節順序。
+`docs/workshop-downloads.md` 是 Markdown 下載表，可直接在 GitHub 點選檔名超連結，
+也可從網站首頁與導覽列的「工作坊下載」開啟；MkDocs 建置輸出為 `site/workshop-downloads/index.html`。
 頁面保留 STD01–STD45 的 45 個原始檔名及 12 個提供的下載連結；`STD19zip` 沿用原拼法，
 未標示的類別與 STD41–STD45 組別不自行推定。第三方下載服務的權限與可用性需另行確認。
 
