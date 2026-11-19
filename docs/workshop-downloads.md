@@ -4,7 +4,7 @@
 
 [網站 repository](https://github.com/ownway22/workshop-agentic-factory-pages)
 
-## A 正式
+## 正式機器 35 台
 
 | 第一組 | 第二組 | 第三組 | 第四組 |
 | --- | --- | --- | --- |
@@ -18,7 +18,7 @@
 | [STD08.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig5i___TqBcKtxls53PLUSSIGN7jsqlPLUSSIGNbD9HUsFZBzPLUSSIGN0makC3cfMcIuHbcdzPLUSSIGNstzCgQdF1tzBfRAR483f8xsMhclssaE5KUIF) | [STD18.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7ebrdGoVDaxcOqjiwjS2WYUoTAOWK5PLUSSIGNiunlQ0bqNcD1lB___lu1CPTSzriPzJoMPLUSSIGNpn8rXdLPLUSSIGNe7WbQdks2az6tQPM) | [STD28.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWb6JivsHE8abtSez4XE3cPLUSSIGNuT1yFFzaml7eovVNHj5ZPTb78b1La3MBzSN8vCNBhAPLUSSIGNW) | [STD38.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWbjbNF8SVTJe___R2zzC___eAvYUfYyPLUSSIGNZPLUSSIGNF3Hj1frDDySDFICFGH9lwuz4YBvu3yUdR2Hk) |
 | [STD09.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig6iwzSaGveJUVvnq2dD11dCsEuYilFAFH6j0fE4MU6eIzUtmSIsfCHUAohWwhK___HMcjxanhXETurwJjZyaITwkW) | [STD19.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig4bEdvYIy9GVyNK0FTwnm3Pw80xyF2KOYE___xv5Fe7VMpU56mdh2BRw8I1ePLUSSIGNYVZySflgnBpAopbEquIqhOiVpdRy) | [STD29.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig49Q6r7Zd2eZ3Nl1R1S4OgkkhULN2VVEgV0n___KaaBOa1Rwj___w3fZzszOK2QqcpzujVRiTIm9t5cIX2hzN6PLUSSIGNIAEB) | — |
 
-## 備援
+## 備援機器 10 台
 
 此列在原表未標示類別；最後一欄也未標示組別。
 
