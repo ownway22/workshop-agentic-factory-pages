@@ -24,15 +24,9 @@
 
 重點不是把五段回答依序顯示，而是每次交棒都留下下一個角色可判讀、可交接的資訊。固定順序是本場示範的設計；實際系統也可能依需求加入平行處理、條件分支或人工核准，不代表所有維護流程都必須採用相同順序。
 
-
 ## 目標
 
-本場練習不連接實廠感測器（sensors），而是手動提交一筆**合成遙測資料（telemetry）**，理解廠端資料與任務如何在 Agent 之間傳遞，以及如何從工具呼叫（tool calls）、工單與追蹤記錄（traces）找到可核對的證據。完成四個 Task 後，您應能：
-
-- 使用 Aspire 啟動 .NET、Python 與 frontend 組成的應用程式。
-- 解釋五個 Agent 的分工，以及 sequential orchestration 的依賴順序。
-- 分辨 Foundry 託管 Agent、VM 內的 .NET Agent，以及 Python HTTP A2A 的呼叫邊界。
-- 從 UI、Console 與 Traces 追蹤一次操作，而不只相信模型回答「已完成」。
+本場練習不連接實廠感測器（sensors），而是手動提交一筆**合成遙測資料（telemetry）**，理解廠端資料與任務如何在 Agent 之間傳遞，以及如何從工具呼叫（tool calls）、工單與追蹤記錄（traces）找到可核對的證據。
 
 ## 核心技術
 
