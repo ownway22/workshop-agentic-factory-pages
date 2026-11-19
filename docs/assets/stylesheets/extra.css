@@ -137,6 +137,11 @@ body:has(.md-typeset h1:is(#start-aspire, #open-frontend, #run-workflow, #observ
   display: none;
 }
 
+body:has(.md-typeset h1#review-and-conclusion)
+  .md-sidebar--primary .md-nav--secondary .md-nav__item:has(> a[href="#license"]) {
+  display: none;
+}
+
 .md-typeset a:focus-visible,
 .md-header a:focus-visible,
 .md-header label:focus-visible {
