@@ -9,8 +9,7 @@ not_in_nav: |
 dev_addr: 127.0.0.1:2800
 use_directory_urls: true
 copyright: >-
-  教材版：standard-1（草稿） · 更新：2026-11-16 · GitHub Pages 教材版<br>
-  文件與網站互動已驗證；雲端 lab 待講師驗證。原始素材 © Microsoft（MIT），詳見「授權」。
+  本教材改寫自 <a href="https://github.com/microsoft/agentic-factory-hack/">Microsoft 原始教材</a> · © Microsoft · 教材與素材採 MIT License · 更新日期：2026-11-18
 
 extra:
   generator: false
@@ -89,8 +88,7 @@ nav:
   - 導覽: index.md
   - 準備: prerequisites.md
   - Task 1：啟動 Aspire: tasks/task-1-start-aspire.md
-  - Task 2：確認 Workflow API 連線: tasks/task-2-api-access.md
-  - Task 3：開啟 frontend: tasks/task-3-open-frontend.md
-  - Task 4：執行 workflow: tasks/task-4-run-workflow.md
-  - Task 5：檢視 dashboard: tasks/task-5-observe-dashboard.md
+  - Task 2：開啟 frontend: tasks/task-2-open-frontend.md
+  - Task 3：執行 workflow: tasks/task-3-run-workflow.md
+  - Task 4：檢視 dashboard: tasks/task-4-observe-dashboard.md
   - 結論: review.md

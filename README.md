@@ -1,12 +1,12 @@
 # 晶圓製造工廠的 Agentic Factory：Workshop 教學網站
 
 這是獨立於應用程式的 **MkDocs + Material for MkDocs + mkdocs-glightbox** 教材專案。
-學員在自己的電腦瀏覽 GitHub Pages，Task 1–5 則在講師提供的 Ubuntu 遠端桌面操作。
+學員在自己的電腦瀏覽 GitHub Pages，Task 1–4 則在講師提供的 Ubuntu 遠端桌面操作。
 學員不需要為了閱讀教材安裝 MkDocs。
 
 ## 範圍與目前發布狀態
 
-- 以原 [Challenge 4 繁中教材](https://github.com/microsoft/agentic-factory-hack/blob/main/challenge-4/README_zh-TW.md) 的五個 Tasks 為操作主線。
+- 以原 [Challenge 4 繁中教材](https://github.com/microsoft/agentic-factory-hack/blob/main/challenge-4/README_zh-TW.md) 重新編排為四個 Tasks，不另設 Workflow API 連線檢查頁。
 - 不修改原應用程式、Azure 基礎設施或其他 workshop 文件。
 - 不使用完成版 solution code 作為教材實作模板。
 - GitHub Pages：<https://ownway22.github.io/workshop-agentic-factory-pages/>。
@@ -35,10 +35,9 @@ workshop-pages-mkdocs/
     ├── resources.md
     ├── tasks/
     │   ├── task-1-start-aspire.md
-    │   ├── task-2-api-access.md
-    │   ├── task-3-open-frontend.md
-    │   ├── task-4-run-workflow.md
-    │   └── task-5-observe-dashboard.md
+    │   ├── task-2-open-frontend.md
+    │   ├── task-3-run-workflow.md
+    │   └── task-4-observe-dashboard.md
     └── assets/
         ├── images/
         ├── javascripts/accessibility.js
@@ -61,7 +60,7 @@ uv pip sync --python .venv/bin/python --require-hashes requirements-docs.lock
 ```
 
 在執行網站的同一台電腦開啟 <http://127.0.0.1:2800/>。若使用遠端開發環境，請使用其受控的 localhost forwarding。
-`2800` 是教材預覽 port，**不是** Task 2 的 workflow API port `5231`。
+`2800` 是教材預覽 port，**不是** workflow API port `5231`。
 若 `2800` 已被占用，請改用另一個未占用的 loopback port，不要停止其他人的服務。
 
 按 `Ctrl+C` 停止預覽。不要直接以 `file://` 開啟建置的 HTML，這不是已驗證的搜尋使用方式。
@@ -76,7 +75,7 @@ uv pip sync --python .venv/bin/python --require-hashes requirements-docs.lock
 
 建置結果位於 `site/`，不納入原始碼版本控制。驗收時確認：
 
-- 左側目錄有導覽、準備、獨立的 Task 1–5 與結論；授權說明位於結論頁。疑難排解和教材資訊保留為可由正文連結開啟的頁面。
+- 左側目錄有導覽、準備、獨立的 Task 1–4 與結論；授權說明位於結論頁。疑難排解和教材資訊保留為可由正文連結開啟的頁面。
 - 結論頁的疑難排解、教材資訊與授權連結皆可開啟，且不含指向本機開發 port 的課程入口。
 - 所有頁面與圖片可開啟，本頁目錄與正文連結正確。
 - 搜尋「維護」、「工單」、`Aspire` 與 `Foundry` 能找到相關內容並開啟正確頁面；不要只測縮短的詞幹。
@@ -97,7 +96,7 @@ uv pip sync --python .venv/bin/python --require-hashes requirements-docs.lock
 
 ### 教學編排
 
-保留 Factory 的五個 Tasks，不為了與 Travel 的四個 Acts 一致而改變技術流程。
+Factory 目前採四個 Tasks，與 Travel 的 Acts 各自編排，不因章節數相同而視為相同流程。
 每個實作章節使用固定順序：
 
 1. 目標
@@ -131,7 +130,7 @@ Task 的共用章節 anchors 為 `goal`、`prerequisites`、`steps`、`evidence`
 | 目錄配置 | 左側整合頁內二級標題、不顯示右側目錄；首頁展開主要小節 |
 
 視覺沿用參考站配色，並依需求調整頁首與桌面版面；不搬入該站的日期、人數、BYOK 配置或教材文案。
-保留目前的文件套件版本、Task 1–5、操作截圖與鍵盤增補程式，不重新加入活動入口或頂端橫幅。
+保留目前的文件套件版本、Task 1–4、操作截圖與鍵盤增補程式，不重新加入活動入口或頂端橫幅。
 額外保留鍵盤焦點樣式，並允許首頁標題與頁首在放大文字時換行，避免窄視窗溢位；正常字級下仍維持參考站版型。
 
 `accessibility.js` 為 Material 原生的 label／toggle 控制項加入可讀名稱、提示、鍵盤操作與展開狀態，

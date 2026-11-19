@@ -7,11 +7,11 @@
 | 現象 | 先核對 | 詳細說明 |
 |---|---|---|
 | 沒有 VM、工具或正確的 repository | 講師交付、工具版本與根目錄 | [準備](prerequisites.md) |
-| Aspire 啟動失敗、port 衝突、Python 初始化失敗 | Resources 與該資源的 Console | [Task 1 疑難排解](tasks/task-1-start-aspire.md#troubleshooting) |
-| Connection refused、Failed to fetch、API 網址不對 | 瀏覽器是否在 VM 內、`dotnetworkflow` endpoint、`VITE_API_URL` | [Task 2 疑難排解](tasks/task-2-api-access.md#troubleshooting) |
-| frontend 沒有出現 | Vite 的狀態與相依服務 | [Task 3 疑難排解](tasks/task-3-open-frontend.md#troubleshooting) |
-| 401／403、Agent 初始化失敗、找不到工單、429 | 實際 pipeline、tool result、身分與資料設定 | [Task 4 疑難排解](tasks/task-4-run-workflow.md#troubleshooting) |
-| 找不到這次 trace，或狀態與業務結果不一致 | 是否真的送出 request、時間與服務篩選 | [Task 5 疑難排解](tasks/task-5-observe-dashboard.md#troubleshooting) |
+| Aspire 啟動失敗、port 衝突、Python 初始化失敗 | Resources 與該資源的 Console | [Task 1](tasks/task-1-start-aspire.md) |
+| Connection refused、Failed to fetch、API 網址不對 | 瀏覽器是否在 VM 內、`dotnetworkflow` endpoint、`VITE_API_URL` | [Task 2](tasks/task-2-open-frontend.md) |
+| frontend 沒有出現 | Vite 的狀態與相依服務 | [Task 2：開啟 frontend](tasks/task-2-open-frontend.md) |
+| 401／403、Agent 初始化失敗、找不到工單、429 | 實際 pipeline、tool result、身分與資料設定 | [Task 3：執行 workflow](tasks/task-3-run-workflow.md) |
+| 找不到這次 trace，或狀態與業務結果不一致 | 是否真的送出 request、時間與服務篩選 | [Task 4：檢視 dashboard](tasks/task-4-observe-dashboard.md) |
 
 !!! warning "需授權：環境與雲端設定"
     學員可以檢查自己 VM 內的畫面與去識別化 logs；變更身分、roles、模型、network、共用資料或資源生命週期，交由講師或資源負責人處理。

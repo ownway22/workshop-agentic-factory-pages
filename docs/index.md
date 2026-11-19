@@ -2,49 +2,55 @@
 
 ## 情境
 
-本教材以晶圓製造工廠作為設備維護的說明情境。設備出現異常後，挑戰不只是判斷哪裡出了問題：設備工程師需要查找維修知識，製造單位需要協調維護時段，物料人員則要確認備品是否到位。資訊若分散在不同系統與人員之間，維護準備就可能卡在反覆確認與交接，讓非預期停機的處理更難協調。
+晶圓製造工廠的設備出現異常時，實務挑戰不只是找出根本原因，還有設備工程師需要查找維修知識，製造單位需要協調維護時段，物料人員則要確認備品是否到位。資訊若分散在不同系統與人員之間，維護準備就可能卡在反覆確認與交接，讓非預期停機的處理更難協調。
 
-本次 hands-on workshop 使用 **Microsoft Foundry、Microsoft Agent Framework 與 Aspire**，觀察五個 Agent 如何把一筆設備警訊整理成診斷、工單、維護排程與備品準備資訊。重點不只是讓流程跑完，而是讓下一個角色拿到**可判讀、可交接的資訊**。
+本場將觀察五個 Agent 的 factory agent workflow 如何把一筆設備警訊整理成診斷、工單、維護排程與備品準備資訊。重點不只是讓流程跑完，而是讓下一個角色拿到**可判讀、可交接的資訊**。背後是由 AI 開發團隊使用 **Microsoft Foundry、Microsoft Agent Framework 與 Aspire** 打造的 multi-agent system。
 
-<br/>
-
-![factory-maintenance-workflow](assets/images/factory-maintenance-workflow.png){ .factory-maintenance-workflow width="2200" height="1100" loading="eager" fetchpriority="high" }
+![五個 Agent 串接設備異常、診斷、維修、排程與備品準備的流程示意](assets/images/factory-maintenance-workflow.png){ .factory-maintenance-workflow width="2200" height="1100" loading="eager" fetchpriority="high" }
 
 <br/>
 
-### 五個 Agent 如何協作 {#agents}
+### 五個 Agent 的接力 {#agent-sequence}
 
-把五個 Agent 看成設備、製造與物料單位協作的縮影，而不是五個聊天視窗。每一步都要留下下一個角色可接手的資訊：
+本次採用 sequential orchestration，讓五個 Agent 依固定順序執行：
 
-| 順序 | Agent | 交棒資訊與業務用途 | 目前 Challenge 4 的呼叫方式 |
-|---|---|---|---|
-| 1 | Anomaly Classification Agent | 整理異常與嚴重程度（severity），讓後續診斷聚焦需要關注的讀值。 | Foundry Agent Service，使用 remote MCP tools |
-| 2 | Fault Diagnosis Agent | 提供可能原因、知識依據與檢查方向，供維修規劃判讀。 | Foundry Agent Service，使用 MCP／knowledge |
-| 3 | Repair Planner Agent | 把診斷轉成工單、技能與備品需求，讓排程與備料有共同的工作對象。 | VM 內 .NET workflow 的流程內呼叫，使用 Cosmos DB tools |
-| 4 | Maintenance Scheduler Agent | 提出維護時間與相關安排，協助考量維護急迫性與生產時段。 | VM 內 Python service，透過 HTTP A2A 呼叫 |
-| 5 | Parts Ordering Agent | 依工單檢查備品與補購需求，提早辨識可能造成等待的缺料條件。 | VM 內 Python service，透過 HTTP A2A 呼叫 |
+**異常分類 → 故障診斷 → 維修規劃 → 維護排程 → 備品確認**
+
+這個順序反映前後步驟的資訊依賴：
+
+- **分類交給診斷**：先整理異常讀值與嚴重程度（severity），再查找可能原因與知識依據。
+- **診斷交給規劃**：依可能原因整理維修工作、技能與備品需求，並建立可識別的工單。
+- **工單交給排程與備料**：讓維護安排與備品處理對應同一張工單，而不是各自處理不同的工作。
+
+重點不是把五段回答依序顯示，而是每次交棒都留下下一個角色可判讀、可交接的資訊。固定順序是本場示範的設計；實際系統也可能依需求加入平行處理、條件分支或人工核准，不代表所有維護流程都必須採用相同順序。
+
 
 ## 目標
 
-本次練習不連接實廠感測器（sensors），而是手動提交一筆**合成遙測資料（telemetry）**。我們將注意力放在資料如何在 Agents 之間傳遞，以及如何從工具呼叫（tool calls）、工單與追蹤記錄（traces）找到可核對的證據。完成五個 Tasks 後，你應能：
+本場練習不連接實廠感測器（sensors），而是手動提交一筆**合成遙測資料（telemetry）**，理解廠端資料與任務如何在 Agent 之間傳遞，以及如何從工具呼叫（tool calls）、工單與追蹤記錄（traces）找到可核對的證據。完成四個 Task 後，您應能：
 
 - 使用 Aspire 啟動 .NET、Python 與 frontend 組成的應用程式。
 - 解釋五個 Agent 的分工，以及 sequential orchestration 的依賴順序。
-- 分辨 Foundry 託管 Agents、VM 內的 .NET agent，以及 Python HTTP A2A 的呼叫邊界。
+- 分辨 Foundry 託管 Agent、VM 內的 .NET Agent，以及 Python HTTP A2A 的呼叫邊界。
 - 從 UI、Console 與 Traces 追蹤一次操作，而不只相信模型回答「已完成」。
 
-## 步驟
+## 核心技術
 
-每頁都提供操作、完成條件與疑難排解。若前置條件尚未滿足，請先向講師確認，不要跳過失敗步驟。完成條件是供自行核對的清單，網站不儲存學員進度。需要協助時，可先查閱全站 [疑難排解](troubleshooting.md)，若仍無法解決，請舉手讓講師知道。
+Agentic Factory 的五個 Agent 採用混合語言（**Python** 與 **C# / .NET 10**）開發，並分別搭配 **Microsoft Agent Framework**、**Microsoft Foundry Agents SDK** 與 **A2A（Agent-to-Agent）**，最後由 **.NET Aspire** 統一啟動與管理這套跨語言（Python + .NET）的多 Agent 系統。
 
-| 頁面 | 你要做的事 | 要看到的結果 |
-|---|---|---|
-| [準備](prerequisites.md) | 確認遠端桌面、工具與既有環境 | 可以在指定 VM 內開啟 repository 與 Terminal |
-| [Task 1：啟動 Aspire](tasks/task-1-start-aspire.md) | 啟動服務 | 可找到 frontend、workflow 與 Python service |
-| [Task 2：確認 Workflow API 連線](tasks/task-2-api-access.md) | 在 VM 內檢查 API | `/health` 有回應，API URL 指向正確服務 |
-| [Task 3：開啟 frontend](tasks/task-3-open-frontend.md) | 進入操作 UI | 看見 Machine ID、Telemetry 與五個 Agent 面板 |
-| [Task 4：執行 workflow](tasks/task-4-run-workflow.md) | 觸發一筆合成異常 | 核對五步的實際輸出與 tool results |
-| [Task 5：檢視 dashboard](tasks/task-5-observe-dashboard.md) | 查看 Console 與 Traces | 能說明同一次操作的呼叫順序與問題位置 |
+![維護工作流程架構示意圖](assets/images/factory-maintenance-architecture.png){ .factory-maintenance-architecture width="1280" height="584" loading="eager" fetchpriority="high" }
+
+<br/>
+
+以下是五個 Agent 各自的程式語言、使用的 Agent 框架／SDK，以及在最終工作流程中的執行方式：
+
+| Agent 名稱 | 程式語言 | Agent 框架 / SDK | 執行 / 串接方式 | 參考檔案 |
+|---|---|---|---|---|
+| Anomaly Classification Agent | **Python** | **Microsoft Foundry Agents SDK** | 註冊於 **Foundry Agent Service** 雲端託管；.NET workflow 透過 `Microsoft.Agents.AI` / `Azure.AI.Projects` 呼叫 | `anomaly_classification_agent.py`<br>`anomaly_classification_agent_mcp.py` |
+| Fault Diagnosis Agent | **Python** | **Microsoft Foundry Agents SDK** | 註冊於 **Foundry Agent Service** 雲端託管；.NET workflow 透過 `Microsoft.Agents.AI` / `Azure.AI.Projects` 呼叫 | `fault_diagnosis_agent.py` |
+| Repair Planner Agent | **C# (.NET 10)** | **Microsoft Agent Framework (.NET)** + **Foundry Agents SDK (.NET)** | 在 .NET workflow 本機行程中建立 `AIAgent`，並透過 `AIFunctionFactory` 掛載本機 Cosmos DB tools | `challenge-2 README`<br>`RepairPlannerAgentFactory.cs` |
+| Maintenance Scheduler Agent | **Python** | **Microsoft Agent Framework (Python)** | 在 Python FastAPI/Starlette 服務中以 **A2A SDK**（`a2a-sdk`）包裝為 A2A Server，由 .NET 端透過 `Microsoft.Agents.AI.A2A` 呼叫 | `maintenance_scheduler_agent.py`<br>`agents.py` |
+| Parts Ordering Agent | **Python** | **Microsoft Agent Framework (Python)** | 在 Python FastAPI/Starlette 服務中以 **A2A SDK**（`a2a-sdk`）包裝為 A2A Server，由 .NET 端透過 `Microsoft.Agents.AI.A2A` 呼叫 | `parts_ordering_agent.py`<br>`agents.py` |
 
 ---
 

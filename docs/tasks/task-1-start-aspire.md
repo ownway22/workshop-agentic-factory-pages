@@ -2,28 +2,35 @@
 
 ## 目標 {#goal}
 
-在遠端桌面中，啟動既有 multi-agent application，並找到 frontend、workflow API 與 Python Agents 的執行資源。
+在遠端桌面中，啟動既有 multi-agent application，並找到 frontend、workflow API 與 Python Agent 的執行資源。
 
-!!! tip "維護現場觀點"
-    這次啟動的不是單一聊天工具，而是一條讓異常判讀、維修規劃、排程與備料接力的流程。先確認各服務就緒，才能在後續觀察交接是否完整。
+## 完成條件 {#checklist}
+
+- [ ] 順利啟動 Aspire 應用程式，沒有未處理的啟動錯誤。
+- [ ] 順利連線 Aspire dashboard，並確認三個服務正常運作——`app`、`frontend` 與 `dotnetworkflow`。
 
 ## 步驟 {#steps}
 
 ### 1．啟動 Aspire 應用程式
 
-回到遠端桌面，從 **repository 根目錄**，在 Ubuntu Terminal 執行：
+在遠端桌面的 VS Code 中，開啟 Terminal 後輸入：
 
 ```bash
 cd challenge-4/agent-workflow
 aspire run
 ```
 
-保持這個 Terminal 開啟。若 Aspire 顯示選擇 launch profile，使用講師指定的設定。
-首次啟動可能需要還原 .NET 套件與初始化服務；Python 與 frontend 相依套件須由講師預先準備。此 AppHost 不會自動執行 Python 或 npm 套件安裝。以輸出與資源狀態判斷進度，不假設固定等待時間。
+並保持這個 Terminal 開啟，不要按 `Ctrl+C`。
 
-### 2．確認服務正常
+![Aspire 啟動後的 Terminal 輸出畫面](../assets/images/aspire-run.png){ .aspire-run width="3022" height="1438" loading="lazy" }
 
-Aspire 會提供 dashboard 連結，並啟動這三個命名資源：
+*圖 1：Aspire 的啟動畫面。*
+
+<br/>
+
+### 2．開啟 Aspire 的 dashboard
+
+Aspire 提供 dashboard 連結，並啟動這三個服務。請查看這三個服務的狀態是否都顯示 `Running`。
 
 | 資源 | 用途 |
 |---|---|
@@ -31,40 +38,37 @@ Aspire 會提供 dashboard 連結，並啟動這三個命名資源：
 | `dotnetworkflow` | .NET workflow API 與 VM 內的 Repair Planner |
 | `frontend` | 學員操作的 Factory Agent Workflow UI |
 
-在 **VM 內**開啟 dashboard；若 VS Code 提示按住 `Ctrl` 或 `Alt` 點選 Terminal 連結，依目前介面提示操作。
-若網址帶有 dashboard 登入 token，僅在自己的 VM 使用，不要分享或截圖公開。
+![Aspire Resources 頁面顯示 app、frontend 與 dotnetworkflow 服務](../assets/images/aspire-dashboard.png){ .aspire-dashboard width="3022" height="1301" loading="lazy" }
 
-### 3．確認連線成功
+*圖 2：Aspire 的 Resources 頁面。*
 
-在 dashboard 的 **Resources** 中核對三個資源是否已啟動，並查看是否有 health check 或啟動錯誤。
-先保留 dashboard，接下來會使用其中的 endpoints 與 logs。
+<br/>
 
-![原始 repository 的 Aspire Resources 示意畫面，顯示資源、狀態與 endpoints](../assets/images/challenge-4-dashboard-resources.png){ .workshop-figure width="3022" height="767" loading="lazy" }
+### 3．開啟 Aspire 的 Graph
 
-*原始教材示意畫面；實際資源狀態、網址與連接埠以自己的 VM 為準。*
+**Aspire 管理應用服務，Agent Framework 定義 Agent workflow**，兩者的責任不同。Agent 的程式執行位置也不等於模型執行位置；VM 內的 Agent 仍會使用雲端模型服務。透過 Graph 頁面，我們將看到統一啟動、分散式執行的跨語言 multi-agent 系統。
 
-## 完成條件 {#checklist}
+### 背後的應用架構 {#application-architecture}
 
-- [ ] 啟動成功，`aspire run` 正在執行，沒有未處理的啟動錯誤。
-- [ ] 服務正常，Resources 找到 `app`、`dotnetworkflow` 與 `frontend`。
-- [ ] 連線成功，能在 VM 內開啟 Aspire dashboard。
+五個 Agent 不需要使用相同語言，也不一定在相同位置執行。各元件的用途如下：
+
+| 元件 | 用途 |
+|---|---|
+| Frontend | 提交 Machine ID 與 Telemetry，呈現執行進度、tool calls 與 Agent output。 |
+| .NET workflow／Microsoft Agent Framework | 串接五個 Agent，定義執行順序與結果交接。 |
+| Foundry Agent Service | 託管 Anomaly Classification 與 Fault Diagnosis，由 .NET workflow 呼叫。 |
+| VM 內的 Repair Planner | 在 .NET workflow 行程內建立 Agent，搭配本機 tools 存取 Cosmos DB，不是另一個 Python A2A 服務。 |
+| Python A2A 服務 | 由 `app` 提供 Maintenance Scheduler 與 Parts Ordering，透過 HTTP A2A 與 .NET workflow 串接。 |
+| Aspire | 統一啟動與管理應用服務，集中呈現 Resources、Graph、Console 與 Traces。 |
+
+
+
+![Aspire Graph 頁面顯示應用服務之間的關聯](../assets/images/aspire-graph.png){ .aspire-graph width="3022" height="1955" loading="lazy" }
+
+*圖 3：Aspire 的 Graph 子頁面。*
+
+---
 
 ## 下一步 {#next}
 
-進入 [Task 2：確認 Workflow API 連線](task-2-api-access.md)。
-
-## 疑難排解 {#troubleshooting}
-
-??? question "找不到 aspire 命令或 .NET SDK"
-    回到 [準備](../prerequisites.md) 核對工具與交付環境。
-    請講師協助，不要在 workshop 中臨時執行未審查的安裝 script 或替換共用 runtime。
-
-??? question "Port 已被占用"
-    先查看錯誤指出的資源與 port，確認是否為自己之前啟動的同一套環境。
-    若是自己仍開啟的 Aspire Terminal，可以用 `Ctrl+C` 正常停止後再啟動。
-    若不確定服務屬於誰，請講師處理，不要任意終止其他程序或修改 firewall。
-
-??? question "Python app 沒有啟動或 A2A 初始化失敗"
-    在 `app` 的 Console 中查看 Python runtime、套件、設定檔與 endpoint 的具體錯誤。
-    此 app 需要 Python 3.13 環境；`/health` 正常也不保證 A2A Agents 初始化成功。
-    記錄經遮蔽的錯誤並請講師協助，不要跳過這個服務繼續宣稱五步流程已完成。
+進入 [Task 2：開啟 frontend](task-2-open-frontend.md)。
