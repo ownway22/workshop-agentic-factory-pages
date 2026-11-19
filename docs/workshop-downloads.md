@@ -18,8 +18,6 @@
 
 ## 備援機器 10 台
 
-此列在原表未標示類別；最後一欄也未標示組別。
-
 | 第一組 | 第二組 | 第三組 | 第四組 | 未標示組別 |
 | --- | --- | --- | --- | --- |
 | [STD10.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7ebrdGoVDaxcOqjiwjS2WYGOEBvrKts8jAByOExP7aACgzKr7GGCwg0SUF2jQycaAIYFe6xtvOHHfl0z___6wAt0) | [STD20.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWb89a2oyZAEv9bh___0LQsmcGY5hhn3T9iP5hy8A6AdaCEZ63Ctb10v4zbAPEzwdqV6j) | [STD30.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWbSRAJFMij3CbQeyZYraeDs6uJaaFM7Os6ke7Zka6L40VeWsTcjHBlPQu00mKUCneM) | [STD39.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWb3i67oNXqDGsVtRPdrw4dbEz8wKB4cjC5fZSm48jNx2qMOKtHwl7n9GrpqLBqUVfp) | [STD41.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig5GG9___DZxxXR7nKLBwwJ0OTucpBAndPCDUVZtw9pYMKXUzAuMq3BZPFuqSyB___CAI8w7YhcXuV2aybV8ogdiq6QY) |
