@@ -6,14 +6,50 @@
 
 ## 完成條件 {#checklist}
 
+- [ ] 已在 VM 內使用自己的學員帳號完成 Azure CLI 登入，並選定 workshop subscription。
 - [ ] 順利啟動 Aspire 應用程式，沒有未處理的啟動錯誤。
 - [ ] 順利連線 Aspire dashboard，並確認三個服務正常運作——`app`、`frontend` 與 `dotnetworkflow`。
 
 ## 步驟 {#steps}
 
-### 1．啟動 Aspire 應用程式
+### 1．登入 Azure CLI
 
 在遠端桌面的 VS Code 中，開啟 Terminal 後輸入：
+
+```bash
+az login --tenant 913ae8af-0c80-421a-a563-a657853a087e --use-device-code
+```
+
+所有學員使用相同的 tenant ID，但請使用**自己被配發的 `STDxx` Azure 帳號**登入。依 Terminal 顯示的網址與裝置代碼完成瀏覽器登入；若瀏覽器已登入其他帳號，請改用**無痕視窗**。
+
+![az-login](../assets/images/az-login.png){ .az-login width="3022" height="1301" loading="lazy" }
+
+*圖 1：Terminal 顯示的網址與裝置代碼。*
+
+<br>
+
+下一步，請使用 Azure 帳號登入 (`STD**@ss126t.onmicrosoft.com`)。
+
+![az-login-2](../assets/images/az-login-2.png){ .az-login-2 width="3022" height="1301" loading="lazy" }
+
+*圖 2：Terminal 顯示的網址與裝置代碼。*
+
+<br>
+
+回到 VM 的 Terminal，等候 `az login` 完成，再選定 workshop subscription：
+
+```bash
+az account set --subscription 324cb68a-c437-4089-b454-65943cb5a374
+az account show --query "{account:user.name, subscription:name, tenant:tenantId}" --output table
+```
+
+確認帳號為自己的 `STDxx` 學員帳號，tenant ID 與上方相同，再進行下一步。
+
+<br/>
+
+### 2．啟動 Aspire 應用程式
+
+在同一個 VM Terminal 中，從 repository 根目錄執行：
 
 ```bash
 cd challenge-4/agent-workflow
@@ -28,7 +64,7 @@ aspire run
 
 <br/>
 
-### 2．開啟 Aspire 的 dashboard
+### 3．開啟 Aspire 的 dashboard
 
 Aspire 提供 dashboard 連結，並啟動這三個服務。請查看這三個服務的狀態是否都顯示 `Running`。
 
@@ -44,7 +80,7 @@ Aspire 提供 dashboard 連結，並啟動這三個服務。請查看這三個�
 
 <br/>
 
-### 3．開啟 Aspire 的 Graph
+### 4．開啟 Aspire 的 Graph
 
 **Aspire 管理應用服務，Agent Framework 定義 Agent workflow**，兩者的責任不同。Agent 的程式執行位置也不等於模型執行位置；VM 內的 Agent 仍會使用雲端模型服務。透過 Graph 頁面，我們將看到統一啟動、分散式執行的跨語言 multi-agent 系統。
 

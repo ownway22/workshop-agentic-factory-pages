@@ -49,6 +49,6 @@
 
 ---
 
-## 授權 {#license}
+<h2 id="license">授權</h2>
 
 本教材改寫自 [Microsoft 原始教材](https://github.com/microsoft/agentic-factory-hack/blob/main/challenge-4/README_zh-TW.md) · © Microsoft · 教材與素材採 MIT License。
