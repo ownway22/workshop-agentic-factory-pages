@@ -22,6 +22,7 @@
 - [ ] 已進入自己被指派的遠端桌面。
 - [ ] 已確認專案、資料庫與 Agent 設定符合自己的分配。
 - [ ] 已確認遠端桌面中使用 VS Code 進入工作目錄 `agentic-factory`。
+- [ ] 已完成 GitHub Copilot BYOK 設定，並在 Chat 中選用 `gpt-5.4-mini`。
 
 ### 1．遠端桌面登入 {#1}
 
@@ -36,6 +37,37 @@
 <br/>
 
 ![VS Code 已開啟 agentic-factory 工作目錄的畫面](assets/images/vs-code-agentic-factory.png){ .vs-code-agentic-factory width="1672" height="1020" loading="eager" fetchpriority="high" }
+
+<br/>
+
+
+### 3．設定 GitHub Copilot BYOK {#copilot-byok}
+
+在 **Ubuntu 遠端桌面內的 VS Code** 設定 GitHub Copilot BYOK（Bring Your Own Key，自備金鑰）。以下所需的 key 與模型設定，請查閱講師提供的 `參賽者資訊.md`，使用自己被分配的資料。
+
+**1．選擇 Azure 並輸入 key**
+
+開啟 **GitHub Copilot Chat → 模型選單 → Manage Models（管理模型）→ Add Models（新增模型）→ Azure**，依提示輸入 `參賽者資訊.md` 中的 key。
+
+![GitHub Copilot 新增 Azure 模型提供者與輸入 key 的畫面](assets/images/copilot-byok-azure.png){ .copilot-byok-azure width="1672" height="941" loading="eager" fetchpriority="high" }
+
+<br/>
+
+**2．選擇 gpt-5.4-mini 並填寫設定**
+
+選擇 **gpt-5.4-mini**，依 `參賽者資訊.md` 填寫以下必要欄位，確認無誤後儲存：
+
+- `id`
+- `name`
+- `url`
+
+![GitHub Copilot 設定 gpt-5.4-mini 的 id、name 與 url 欄位](assets/images/copilot-byok-config.png){ .copilot-byok-config width="1672" height="941" loading="eager" fetchpriority="high" }
+
+**3．回到 Chat 確認模型**
+
+回到 GitHub Copilot Chat 的模型選單，選用剛新增的 **gpt-5.4-mini**，確認目前使用的是自己的 Azure BYOK 模型。
+
+![GitHub Copilot Chat 選用已設定的 gpt-5.4-mini 模型](assets/images/copilot-byok-chat.png){ .copilot-byok-chat width="1672" height="941" loading="eager" fetchpriority="high" }
 
 <br/>
 
