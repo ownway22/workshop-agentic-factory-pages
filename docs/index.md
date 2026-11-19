@@ -40,11 +40,11 @@ Agentic Factory 的五個 Agent 採用混合語言（**Python** 與 **C# / .NET 
 
 | Agent 名稱 | 程式語言 | Agent 框架 / SDK | 執行 / 串接方式 | 參考檔案 |
 |---|---|---|---|---|
-| Anomaly Classification Agent | **Python** | **Microsoft Foundry Agents SDK** | 註冊於 **Foundry Agent Service** 雲端託管；.NET workflow 透過 `Microsoft.Agents.AI` / `Azure.AI.Projects` 呼叫 | `anomaly_classification_agent.py`<br>`anomaly_classification_agent_mcp.py` |
-| Fault Diagnosis Agent | **Python** | **Microsoft Foundry Agents SDK** | 註冊於 **Foundry Agent Service** 雲端託管；.NET workflow 透過 `Microsoft.Agents.AI` / `Azure.AI.Projects` 呼叫 | `fault_diagnosis_agent.py` |
-| Repair Planner Agent | **C# (.NET 10)** | **Microsoft Agent Framework (.NET)** + **Foundry Agents SDK (.NET)** | 在 .NET workflow 本機行程中建立 `AIAgent`，並透過 `AIFunctionFactory` 掛載本機 Cosmos DB tools | `challenge-2 README`<br>`RepairPlannerAgentFactory.cs` |
-| Maintenance Scheduler Agent | **Python** | **Microsoft Agent Framework (Python)** | 在 Python FastAPI/Starlette 服務中以 **A2A SDK**（`a2a-sdk`）包裝為 A2A Server，由 .NET 端透過 `Microsoft.Agents.AI.A2A` 呼叫 | `maintenance_scheduler_agent.py`<br>`agents.py` |
-| Parts Ordering Agent | **Python** | **Microsoft Agent Framework (Python)** | 在 Python FastAPI/Starlette 服務中以 **A2A SDK**（`a2a-sdk`）包裝為 A2A Server，由 .NET 端透過 `Microsoft.Agents.AI.A2A` 呼叫 | `parts_ordering_agent.py`<br>`agents.py` |
+| Anomaly Classification Agent<br/>(異常分類) | **Python** | **Microsoft Foundry Agents SDK** | 註冊於 **Foundry Agent Service** 雲端託管；.NET workflow 透過 `Microsoft.Agents.AI` / `Azure.AI.Projects` 呼叫 | `anomaly_classification_agent.py`<br>`anomaly_classification_agent_mcp.py` |
+| Fault Diagnosis Agent<br/>(故障診斷) | **Python** | **Microsoft Foundry Agents SDK** | 註冊於 **Foundry Agent Service** 雲端託管；.NET workflow 透過 `Microsoft.Agents.AI` / `Azure.AI.Projects` 呼叫 | `fault_diagnosis_agent.py` |
+| Repair Planner Agent<br/>(維修規劃) | **C# (.NET 10)** | **Microsoft Agent Framework (.NET)** + **Foundry Agents SDK (.NET)** | 在 .NET workflow 本機行程中建立 `AIAgent`，並透過 `AIFunctionFactory` 掛載本機 Cosmos DB tools | `challenge-2 README`<br>`RepairPlannerAgentFactory.cs` |
+| Maintenance Scheduler Agent<br/>(維護排程) | **Python** | **Microsoft Agent Framework (Python)** | 在 Python FastAPI/Starlette 服務中以 **A2A SDK**（`a2a-sdk`）包裝為 A2A Server，由 .NET 端透過 `Microsoft.Agents.AI.A2A` 呼叫 | `maintenance_scheduler_agent.py`<br>`agents.py` |
+| Parts Ordering Agent<br/>(零件訂購) | **Python** | **Microsoft Agent Framework (Python)** | 在 Python FastAPI/Starlette 服務中以 **A2A SDK**（`a2a-sdk`）包裝為 A2A Server，由 .NET 端透過 `Microsoft.Agents.AI.A2A` 呼叫 | `parts_ordering_agent.py`<br>`agents.py` |
 
 ---
 
