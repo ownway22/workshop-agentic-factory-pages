@@ -2,8 +2,6 @@
 
 點選檔名即可開啟對應的下載頁面，45 個檔案皆已提供連結。
 
-[網站 repository](https://github.com/ownway22/workshop-agentic-factory-pages)
-
 ## 正式機器 35 台
 
 | 第一組 | 第二組 | 第三組 | 第四組 |
