@@ -53,7 +53,7 @@ workshop-pages-mkdocs/
 
 `docs/workshop-downloads.md` 是 Markdown 下載表，可直接在 GitHub 點選檔名超連結，
 也可從網站首頁與導覽列的「工作坊下載」開啟；MkDocs 建置輸出為 `site/workshop-downloads/index.html`。
-頁面保留 STD01–STD45 的 45 個原始檔名及 24 個提供的下載連結；`STD19zip` 沿用原拼法，
+頁面保留 STD01–STD45 的 45 個原始檔名及 35 個提供的下載連結；`STD19zip` 沿用原拼法，
 未標示的類別與 STD41–STD45 組別不自行推定。第三方下載服務的權限與可用性需另行確認。
 
 以下命令適用於 Linux。網站使用 **Python 3.12**；這與 Agent 應用程式要求的 Python 3.13 是不同的環境。
