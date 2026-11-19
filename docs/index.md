@@ -20,9 +20,11 @@
 
 - **分類交給診斷**：先整理異常讀值與嚴重程度（severity），再查找可能原因與知識依據。
 - **診斷交給規劃**：依可能原因整理維修工作、技能與備品需求，並建立可識別的工單。
-- **工單交給排程與備料**：讓維護安排與備品處理對應同一張工單，而不是各自處理不同的工作。
+- **工單交給排程 與 備料**：讓維護安排與備品處理對應同一張工單，而不是各自處理不同的工作。
 
-重點不是把五段回答依序顯示，而是每次交棒都留下下一個角色可判讀、可交接的資訊。固定順序是本場示範的設計；實際系統也可能依需求加入平行處理、條件分支或人工核准，不代表所有維護流程都必須採用相同順序。
+![agentic-maintenance-orchestration](assets/images/agentic-maintenance-orchestration.png){ .agentic-maintenance-orchestration width="1280" height="584" loading="eager" fetchpriority="high" }
+
+<br/>
 
 ## 目標
 
@@ -32,7 +34,7 @@
 
 Agentic Factory 的五個 Agent 採用混合語言（**Python** 與 **C# / .NET 10**）開發，並分別搭配 **Microsoft Agent Framework**、**Microsoft Foundry Agents SDK** 與 **A2A（Agent-to-Agent）**，最後由 **.NET Aspire** 統一啟動與管理這套跨語言（Python + .NET）的多 Agent 系統。
 
-![維護工作流程架構示意圖](assets/images/factory-maintenance-architecture.png){ .factory-maintenance-architecture width="1280" height="584" loading="eager" fetchpriority="high" }
+![hackathon-architecture](assets/images/hackathon-architecture.png){ .hackathon-architecture width="1280" height="584" loading="eager" fetchpriority="high" }
 
 <br/>
 
