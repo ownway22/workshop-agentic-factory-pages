@@ -1,6 +1,6 @@
 # Agentic Factory 工作坊下載
 
-點選有超連結的檔名，即可開啟對應的下載頁面。其餘檔案尚未提供連結。
+點選檔名即可開啟對應的下載頁面，45 個檔案皆已提供連結。
 
 [網站 repository](https://github.com/ownway22/workshop-agentic-factory-pages)
 
@@ -21,14 +21,13 @@
 ## B 原表其餘檔案
 
 此列在原表未標示類別；最後一欄也未標示組別。
-以下檔案皆尚未提供連結。
 
 | 第一組 | 第二組 | 第三組 | 第四組 | 未標示組別 |
 | --- | --- | --- | --- | --- |
-| STD10.zip | STD20.zip | STD30.zip | STD39.zip | STD41.zip |
-| — | — | — | STD40.zip | STD42.zip |
-| — | — | — | — | STD43.zip |
-| — | — | — | — | STD44.zip |
-| — | — | — | — | STD45.zip |
+| [STD10.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7ebrdGoVDaxcOqjiwjS2WYGOEBvrKts8jAByOExP7aACgzKr7GGCwg0SUF2jQycaAIYFe6xtvOHHfl0z___6wAt0) | [STD20.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWb89a2oyZAEv9bh___0LQsmcGY5hhn3T9iP5hy8A6AdaCEZ63Ctb10v4zbAPEzwdqV6j) | [STD30.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWbSRAJFMij3CbQeyZYraeDs6uJaaFM7Os6ke7Zka6L40VeWsTcjHBlPQu00mKUCneM) | [STD39.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWb3i67oNXqDGsVtRPdrw4dbEz8wKB4cjC5fZSm48jNx2qMOKtHwl7n9GrpqLBqUVfp) | [STD41.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig5GG9___DZxxXR7nKLBwwJ0OTucpBAndPCDUVZtw9pYMKXUzAuMq3BZPFuqSyB___CAI8w7YhcXuV2aybV8ogdiq6QY) |
+| — | — | — | [STD40.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig4bEdvYIy9GVyNK0FTwnm3PnXNnsrHHKmORmt7X3y9P0tIMfKvTlof4O95GRDERZ3IRmp___J___9B83JuFNiVxhDBW) | [STD42.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7PLUSSIGNClF0XRjOYT___0zvR04oWbOUE0HDXBZrlJaNg8CurND8E7BBeGVqpdMVXba___hxLvIYj1q6hO0mwJlX6HtQLhA5) |
+| — | — | — | — | [STD43.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig52MLqPjK64QDeO9WZAFqCabxPLUSSIGNCUwPLUSSIGNZqfL7RvccHyunQHknlQGepxpJ1XI28FyOWc4I3CKZUT3HN9QZ2ndl___Y9a) |
+| — | — | — | — | [STD44.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7KA2qcjrooVCAVneQ9V___f7PPoYg0fmb8731i1cOYriH1xhIsvewsGVU6YiwN18GxtALz8FlyAY1KKOMQsR9lmp) |
+| — | — | — | — | [STD45.zip](https://livesend.microsoft.com/i/YQ2qVruoBbrSdjb___v9rTrt3JDsznlnIZzfkPl1DCig7KA2qcjrooVCAVneQ9V___f7cPK5mkLA2qcIgHS7hDFxGNCAwjyzYumKkzaZiPi7S6hDTpJ8lIjVxra9KLQk8x3O) |
 
 STD19zip 沿用原始檔名，未自行改為 STD19.zip。
