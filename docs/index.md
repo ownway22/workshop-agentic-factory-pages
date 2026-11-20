@@ -34,7 +34,7 @@
 
 Agentic Factory 的五個 Agent 採用混合語言（**Python** 與 **C# / .NET 10**）開發，並分別搭配 **Microsoft Agent Framework**、**Microsoft Foundry Agents SDK** 與 **A2A（Agent-to-Agent）**，最後由 **.NET Aspire** 統一啟動與管理這套跨語言（Python + .NET）的多 Agent 系統。
 
-![hackathon-architecture](assets/images/hackathon-architecture.png){ .hackathon-architecture width="1280" height="584" loading="eager" fetchpriority="high" }
+![workflow-architecture](assets/images/workflow-architecture.png){ .workflow-architecture width="1280" height="584" loading="eager" fetchpriority="high" }
 
 <br/>
 
